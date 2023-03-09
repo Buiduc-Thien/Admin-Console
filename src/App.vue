@@ -13,8 +13,6 @@ export default {
   components: { 
     Header
   },
-  mounted() {
-    console.log('app da duoc khoi tao');
-  },
+
 }
 </script>
