@@ -40,9 +40,7 @@ export default {
         onProductAdded() {
             this.getProducts();
         },
-        handleMsg: function (msg) {
-            this.msg = msg;
-        }
+    
     },
     mounted() {
         this.getProducts();

@@ -3,16 +3,15 @@
 
         <div class="mb-3">
             <label for="name" class="form-label">Tên sản phẩm:</label>
-            <input type="input" class="form-control" id="name" placeholder="Nhập tên của sản phẩm" v-model="productName">
+            <input type="input" class="form-control" id="name" placeholder="Nhập tên của sản phẩm" v-model="formData.name">
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Example textarea</label>
-            <textarea class="form-control" id="description" rows="3" v-model="productDescription"></textarea>
+            <textarea class="form-control" id="description" rows="3" v-model="formData.description"></textarea>
         </div>
-        <div class="mb-3">
-            <label for="sizes" class="form-label">Sizes</label>
-            <input type="input" class="form-control" id="sizes" placeholder="Sizes" v-model="productSizes">
-        </div>
+        <select class="form-select" aria-label="Default select example" v-model="formData.sizes">
+            <option v-for="item in availableSizes" :key="item.id" :value="item.id">{{ item.name }}</option>
+        </select>
 
         <button type="submit" class="btn btn-primary">Primary</button>
     </form>
@@ -25,30 +24,51 @@ import { API_URL, apiClient } from '../api';
 export default {
     data() {
         return {
-            productName: '',
-            productDescription: '',
-            productSizes: ''
+            availableSizes: [],
+            formData: {
+                name: '',
+                description: '',
+                sizes: ''
+            },
         };
     },
     methods: {
-        createProduct() {
-            const data = {
-                name: this.productName,
-                description: this.productDescription,
-                sizes: this.productSizes
-            };
-            console.log(data);
-            apiClient.post(API_URL+'admin/products/create', data)
+        getSize() {
+            apiClient.get(API_URL + 'admin/sizes')
                 .then(response => {
-                    console.log(response.data);
-                    this.$emit('product-added', 'Product created successfully');
-                    // Thực hiện các thao tác cần thiết sau khi tạo sản phẩm thành công
+                    this.availableSizes = response.data;
                 })
                 .catch(error => {
-                    console.log(error.response.data);
-                    // Hiển thị thông tin lỗi nếu tạo sản phẩm thất bại
+                    console.log(error);
                 });
         },
-    }
+        resetForm() {
+            // Set formData back to its initial state
+            this.formData = {
+                name: '',
+                description: '',
+                sizes: ''
+            }
+        },
+        createProduct() {
+            apiClient.post(API_URL + 'admin/products/create', this.formData)
+                .then(response => {
+                    // Thực hiện các thao tác cần thiết sau khi tạo sản phẩm thành công
+                    console.log(response.data);
+                    // ResetForm
+                    this.resetForm();
+                    // Gửi thông báo lên Components là: Product created successfully
+                    this.$emit('product-added', 'Product created successfully');
+                })
+                .catch(error => {
+                    // Hiển thị thông tin lỗi nếu tạo sản phẩm thất bại
+                    console.log(error.response.data);
+                });
+        },
+    },
+    mounted() {
+        this.getSize();
+    },
 };
+
 </script>
