@@ -4,8 +4,8 @@ import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { createRouter, createWebHashHistory } from "vue-router";
 
-import FormRegister from "./components/FormRegister.vue";
-import HomePage from "./components/HomePage.vue";
+import FormRegisterUser from "./components/form-register-user.vue";
+import ListProduct from "./components/list-product.vue";
 
 const app = createApp(App);
 
@@ -16,12 +16,12 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     {
-      path: "/",
-      component: HomePage,
+      path: "/list-product",
+      component: ListProduct,
     },
     {
       path: "/register",
-      component: FormRegister,
+      component: FormRegisterUser,
     },
   ],
 });

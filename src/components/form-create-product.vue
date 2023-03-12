@@ -1,6 +1,5 @@
 <template>
     <form @submit.prevent="createProduct">
-
         <div class="mb-3">
             <label for="name" class="form-label">Tên sản phẩm:</label>
             <input type="input" class="form-control" id="name" placeholder="Nhập tên của sản phẩm" v-model="formData.name">
@@ -12,8 +11,7 @@
         <select class="form-select" aria-label="Default select example" v-model="formData.sizes">
             <option v-for="item in availableSizes" :key="item.id" :value="item.id">{{ item.name }}</option>
         </select>
-
-        <button type="submit" class="btn btn-primary">Primary</button>
+        <button type="submit" class="btn btn-primary">Tạo sản phẩm</button>
     </form>
 </template>
 

@@ -1,21 +1,6 @@
 <template>
     <div class="container py-5">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                </tr>
-
-            </tbody>
-        </table>
-        <div class="registerForm col-6 pt-5">
+        <div class="registerForm col-6">
             <form @submit.prevent="registerUser">
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
@@ -23,7 +8,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                    <input ty   pe="email" class="form-control" id="email" aria-describedby="emailHelp"
                         v-model="formData.email">
                 </div>
                 <div class="mb-3">
