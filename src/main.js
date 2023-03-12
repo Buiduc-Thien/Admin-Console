@@ -2,28 +2,12 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { createRouter, createWebHashHistory } from "vue-router";
+import Toast from "vue-toastification";
+import "vue-toastification/dist/index.css";
 
-import FormRegisterUser from "./components/form-register-user.vue";
-import ListProduct from "./components/list-product.vue";
+const options = {
+    // You can set your default options here
+};
 
-const app = createApp(App);
-
-app.provide('myGlobalVariable', 'Hello, world!');
-
-
-const router = createRouter({
-  history: createWebHashHistory(),
-  routes: [
-    {
-      path: "/list-product",
-      component: ListProduct,
-    },
-    {
-      path: "/register",
-      component: FormRegisterUser,
-    },
-  ],
-});
-
-createApp(App).use(router).mount("#app");
+import router from "./routes/web";
+createApp(App).use(router).use(Toast, options).mount("#app");

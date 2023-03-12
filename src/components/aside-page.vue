@@ -1,15 +1,15 @@
 <template>
-    <aside class="open">
+    <aside class="open" v-if="!isLoginPageOrRegisterPage">
         <div class="aside__top">
-            <a class="logo__link d-flex align-items-center text-decoration-none" href="/">
+            <router-link to="/" class="logo__link d-flex align-items-center text-decoration-none">
                 <img class="me-2" src="../assets/logo.svg" alt="Icon Logo">
                 <p class="mb-0 h2 logo__link-name">Atclouds</p>
-            </a>
+            </router-link>
         </div>
         <div class="aside__main">
             <ul class="menu-primary">
                 <li class="menu-item">
-                    <a href="" class="menu-link" @click="currentMenuItem = 0"
+                    <router-link to="/" class="menu-link" @click="currentMenuItem = 0"
                         v-bind:class="{ active: currentMenuItem == 0 }">
                         <div class="menu-link__info">
                             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -24,7 +24,7 @@
                             </svg>
                             Tổng quan
                         </div>
-                    </a>
+                    </router-link>
                 </li>
                 <li class="menu-item">
                     <a class="menu-link collapsed" data-bs-toggle="collapse" href="#collapseExample" role="button"
@@ -57,283 +57,35 @@
                             </li>
                             <li class="sub-menu__item">
                                 <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
+                                    Thêm mới sản phẩm
                                 </router-link>
                             </li>
                             <li class="sub-menu__item">
                                 <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
+                                    Danh mục sản phẩm
                                 </router-link>
                             </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
+                            
                         </ul>
                     </div>
                 </li>
-                <li class="menu-item">
-                    <a class="menu-link collapsed" data-bs-toggle="collapse" href="#collapseExample" role="button"
-                        aria-expanded="false" aria-controls="collapseExample">
-                        <div class="menu-link__info">
-                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                xmlns:svgjs="http://svgjs.com/svgjs" width="17" height="17" x="0" y="0"
-                                viewBox="0 0 437.004 437" style="enable-background:new 0 0 512 512" xml:space="preserve">
-                                <g>
-                                    <path
-                                        d="M229 14.645A50.173 50.173 0 0 0 192.371.015L52.293 3.586C25.672 4.25 4.246 25.673 3.582 52.298L.016 192.37a50.215 50.215 0 0 0 14.625 36.633l193.367 193.36c19.539 19.495 51.168 19.495 70.707 0l143.644-143.645c19.528-19.524 19.528-51.184 0-70.711zm179.219 249.933-143.645 143.64c-11.722 11.7-30.703 11.7-42.426 0L28.785 214.86a30.131 30.131 0 0 1-8.777-21.98l3.566-140.074c.403-15.973 13.254-28.828 29.227-29.227l140.074-3.57c.254-.004.5-.008.754-.008a30.129 30.129 0 0 1 21.223 8.79l193.367 193.362c11.695 11.723 11.695 30.703 0 42.426zm0 0">
-                                    </path>
-                                    <path
-                                        d="M130.719 82.574c-26.59 0-48.145 21.555-48.149 48.145 0 26.59 21.559 48.144 48.145 48.144 26.59 0 48.144-21.554 48.144-48.144-.03-26.574-21.566-48.114-48.14-48.145zm0 76.29c-15.547 0-28.145-12.602-28.149-28.145 0-15.543 12.602-28.145 28.145-28.145s28.144 12.602 28.144 28.145c-.015 15.535-12.605 28.125-28.14 28.144zm0 0">
-                                    </path>
-                                </g>
-                            </svg>
-                            Sản phẩm
-                        </div>
-                        <a class="menu-link__icon">
-                            <img src="../assets/drop-left.svg" alt="Icon DropLeft">
-                        </a>
-                    </a>
-                    <div class="collapse" id="collapseExample">
-                        <ul class="sub-menu">
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                            <li class="sub-menu__item">
-                                <router-link to="/list-product" class="sub-menu__link">
-                                    Tất cả sản phẩm
-                                </router-link>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-
             </ul>
         </div>
     </aside>
 </template>
 <script>
 export default {
+    computed: {
+        isLoginPageOrRegisterPage() {
+            return ['/login', '/register'].includes(this.$route.path);
+        }
+    },
     data() {
         return {
             currentMenuItem: 0
-        };
-    }
+        }
+    },
 }
-
 </script>
 
 <style lang="scss" scoped>
@@ -475,4 +227,5 @@ aside {
         }
     }
 
-}</style>
+}
+</style>

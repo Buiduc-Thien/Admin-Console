@@ -1,7 +1,14 @@
 <script>
+export default {
+    computed: {
+        isLoginPageOrRegisterPage() {
+            return ['/login', '/register'].includes(this.$route.path);
+        }
+    },
+}
 </script>
 <template>
-    <header>
+    <header v-if="!isLoginPageOrRegisterPage">
         <div class="layout-width">
             <nav class="header-nav d-flex align-items-center justify-content-between">
                 <div class="header-nav__left d-flex align-items-center">

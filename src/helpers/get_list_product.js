@@ -1,4 +1,4 @@
-import { API_URL, apiClient } from "../api";
+import { API_URL, apiClient } from "../routes/api";
 
 export async function getProducts() {
   return apiClient
