@@ -33,19 +33,15 @@ body {
 </style>
 
 <template>
-  <HeaderPage></HeaderPage>
-  <AsideControl></AsideControl>
-  <router-view class="wrap-component"></router-view>
+  <router-view>
+    
+  </router-view>
 </template>
 
 <script>
-import HeaderPage from './components/header-page.vue'
-import AsideControl from './components/aside-page.vue'
 export default {
   name: 'App',
   components: {
-    HeaderPage,
-    AsideControl,
 
   },
 

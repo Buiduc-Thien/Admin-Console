@@ -10,4 +10,5 @@ const options = {
 };
 
 import router from "./routes/web";
-createApp(App).use(router).use(Toast, options).mount("#app");
+import store from "./store/store";
+createApp(App).use(router).use(store).use(Toast, options).mount("#app");
