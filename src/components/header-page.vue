@@ -86,6 +86,7 @@ header {
     background-color: #fff;
     left: 222px;
     right: 0;
+    top: 0;
     position: fixed;
     padding: 14px 34px 14px 24px;
     height: 70px;
